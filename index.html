@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Fridge Detector</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/onnxruntime-web/1.17.0/ort.min.js"></script>
+<style>
+  body { font-family: -apple-system, sans-serif; max-width: 480px; margin: 0 auto; padding: 16px; background: #111; color: #eee; }
+  video, canvas { width: 100%; border-radius: 12px; }
+  #canvas { display: none; }
+  button { width: 100%; padding: 14px; font-size: 16px; border-radius: 10px; border: none; margin-top: 10px; background: #3478f6; color: white; }
+  #results { margin-top: 16px; }
+  .item { padding: 8px 12px; background: #222; border-radius: 8px; margin-bottom: 6px; display: flex; justify-content: space-between; }
+  .missing { color: #ff6b6b; }
+  label { display: block; margin-top: 12px; }
+</style>
+</head>
+<body>
+  <h2>Fridge Scanner</h2>
+  <video id="video" autoplay playsinline></video>
+  <canvas id="canvas" width="640" height="640"></canvas>
+  <button id="captureBtn">Take Photo & Scan</button>
+
+  <label><input type="checkbox" id="checkMissing"> Alert me what's missing</label>
+
+  <div id="results"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
